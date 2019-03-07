@@ -32,4 +32,9 @@ class PetsController < ApplicationController
     @pet.save
     redirect "pets/#{@pet.id}"
   end
+
+  get '/pets/:id/edit' do 
+    @pet = Pet.find(params[:id])
+    erb :'/pets/edit'
+  end
 end
